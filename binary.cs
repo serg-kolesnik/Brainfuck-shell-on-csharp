@@ -10,26 +10,16 @@ namespace Brainfuck_interpretator
 {
     internal class binary
     {
-        public char[] Execute(string code)
+        public byte[] Execute(string code)
         {
             // char[] charArray = sentence.ToCharArray(); для перевода кода
             byte[] bin = new byte[30000];
             int index = 0;
-            char plus = '+';
-            char minus = '-';
-            char next = '>';
-            char back = '<';
-            char prt = '.';
-            char inp = ',';
-            char lp = '[';
-            char llp = ']';
-            int rc = 0;
-            char endl = '\n';
-            char ex = '@';
-            char deb = '%';
             char[] array_code = code.ToCharArray();
             for (int i = 0; i < array_code.Length; i++)
             {
+                int input_amount = 0;
+                int temp = i;
                 switch (array_code[i]) 
                 {
                     case '+': bin[index]++ ; break;
@@ -37,24 +27,39 @@ namespace Brainfuck_interpretator
                     case '>': index++ ; break;
                     case '<': index-- ; break;
                     case '.': print_char(bin); break;
-                    case ',': input_char(bin); break;
+                    case ',': 
+                        while (array_code[i+input_amount] == ',') 
+                        {
+                            input_amount++;
+                        } 
+
+                        
+                    case '[':
+                        if (bin[index] == 0)
+                        {
+                            int depth = 1;
+                            while (depth > 0)
+                            {
+                                i++;
+                                if (array_code[i] == '[') depth++;
+                                if (array_code[i] == ']') depth--;
+                            }
+                        }
+                        break;
+
                     case ']':
-                        if (bin[index - 1] != 0)
+                        if (bin[index] != 0)
                         {
                             int depth = 1;
                             while (depth > 0)
                             {
                                 i--;
-                                if (i < 0)
-                                    throw new Exception("Не найдена открывающая скобка для ']'");
-
-                                if (array_code[i] == ']')
-                                    depth++;
-                                else if (array_code[i] == '[')
-                                    depth--;
+                                if (array_code[i] == ']') depth++;
+                                if (array_code[i] == '[') depth--;
                             }
                         }
                         break;
+
                 }
             }
             return bin;

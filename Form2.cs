@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Brainfuck_interpretator
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
-        }
-
-        private void Run_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Help_button_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
