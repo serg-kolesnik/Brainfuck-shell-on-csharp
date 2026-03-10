@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Brainfuck_interpretator
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
+            inputForm nen = new inputForm();
+            nen.Visible = true;
         }
 
         private void Run_Click(object sender, EventArgs e)
@@ -25,6 +27,10 @@ namespace Brainfuck_interpretator
         private void Help_button_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
         }
     }
 }

@@ -26,14 +26,21 @@ namespace Brainfuck_interpretator
                     case '-': bin[index]-- ; break;
                     case '>': index++ ; break;
                     case '<': index-- ; break;
-                    case '.': print_char(bin); break;
+                    case '.': //print_char(bin);
+                              break;
                     case ',': 
                         while (array_code[i+input_amount] == ',') 
                         {
                             input_amount++;
-                        } 
+                        }
+                        //запуск inputForm
+                        inputForm nen = new inputForm();
+                        //string input = nen.labelToString();
+                        for (int m = 0; input_amount>m;m++)
+                        {
 
-                        
+                        }
+                        break;
                     case '[':
                         if (bin[index] == 0)
                         {
