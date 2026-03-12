@@ -1,6 +1,6 @@
 ﻿namespace Brainfuck_interpretator
 {
-    partial class Form2
+    partial class OutputForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            this.label1 = new System.Windows.Forms.Label();
+            this.Output = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // Form2
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(62, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Output:";
+            // 
+            // Output
+            // 
+            this.Output.AutoSize = true;
+            this.Output.Location = new System.Drawing.Point(12, 40);
+            this.Output.Name = "Output";
+            this.Output.Size = new System.Drawing.Size(0, 20);
+            this.Output.TabIndex = 1;
+            // 
+            // OutputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form2";
-            this.Text = "Help";
+            this.ClientSize = new System.Drawing.Size(467, 107);
+            this.Controls.Add(this.Output);
+            this.Controls.Add(this.label1);
+            this.Name = "OutputForm";
+            this.Text = "OutputForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Output;
     }
 }

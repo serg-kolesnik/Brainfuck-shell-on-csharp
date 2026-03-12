@@ -15,12 +15,12 @@ namespace Brainfuck_interpretator
         public MainForm()
         {
             InitializeComponent();
-            inputForm nen = new inputForm();
-            nen.Visible = true;
         }
 
         private void Run_Click(object sender, EventArgs e)
         {
+            binary main = new binary();
+            main.Execute(richTextBox1.Text);
 
         }
 

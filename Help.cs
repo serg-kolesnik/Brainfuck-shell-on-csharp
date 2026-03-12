@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Brainfuck_interpretator
 {
-    public partial class Form2 : Form
+    public partial class Help : Form
     {
-        public Form2()
+        public Help()
         {
             InitializeComponent();
         }

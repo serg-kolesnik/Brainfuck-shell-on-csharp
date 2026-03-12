@@ -36,6 +36,7 @@
             this.Help_button = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.performanceCounter1 = new System.Diagnostics.PerformanceCounter();
+            this.deblabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.performanceCounter1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(1170, 526);
             this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "123123123";
+            this.richTextBox1.Text = "+++[>+>+<<]..";
             // 
             // Run
             // 
@@ -94,11 +95,21 @@
             this.button5.Text = "button5";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // deblabel
+            // 
+            this.deblabel.AutoSize = true;
+            this.deblabel.Location = new System.Drawing.Point(1301, 205);
+            this.deblabel.Name = "deblabel";
+            this.deblabel.Size = new System.Drawing.Size(94, 20);
+            this.deblabel.TabIndex = 9;
+            this.deblabel.Text = "Debug label";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1582, 836);
+            this.Controls.Add(this.deblabel);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.Help_button);
             this.Controls.Add(this.button3);
@@ -110,6 +121,7 @@
             this.Text = "Brainfuck";
             //((System.ComponentModel.ISupportInitialize)(this.performanceCounter1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -122,6 +134,7 @@
         private System.Windows.Forms.Button Help_button;
         private System.Windows.Forms.Button button5;
         private System.Diagnostics.PerformanceCounter performanceCounter1;
+        public System.Windows.Forms.Label deblabel;
     }
 }
 

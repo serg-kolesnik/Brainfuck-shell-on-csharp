@@ -5,71 +5,126 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Brainfuck_interpretator
 {
     internal class binary
     {
-        public byte[] Execute(string code)
+        public void Execute(string code)
         {
-            // char[] charArray = sentence.ToCharArray(); для перевода кода
-            byte[] bin = new byte[30000];
-            int index = 0;
-            char[] array_code = code.ToCharArray();
+            char[] array_code = code.ToCharArray(); // для посимвольного чтения кода
+            byte[] bin = new byte[30000]; // память
+            int index = 0; // указатель
+
             for (int i = 0; i < array_code.Length; i++)
             {
-                int input_amount = 0;
-                int temp = i;
-                switch (array_code[i]) 
+                switch (array_code[i])
                 {
-                    case '+': bin[index]++ ; break;
-                    case '-': bin[index]-- ; break;
-                    case '>': index++ ; break;
-                    case '<': index-- ; break;
-                    case '.': //print_char(bin);
-                              break;
-                    case ',': 
-                        while (array_code[i+input_amount] == ',') 
+                    case '+':
+                        bin[index]++;
+                        break;
+
+                    case '-':
+                        bin[index]--;
+                        break;
+
+                    case '>':
+                        if (index < bin.Length - 1) index++;
+                        break;
+
+                    case '<':
+                        if (index > 0) index--;
+                        break;// до этого всё работает... а после нетъ
+
+                    case '.':
+                        // Определяем количество символов для вывода
+                        int output_amount = 1;
+                        while (i + output_amount < array_code.Length &&
+                               array_code[i + output_amount] == ',')
+                        {
+                            output_amount++;
+                        }
+
+                        // Собираем байты из памяти
+                        byte[] outputBytes = new byte[output_amount];
+                        for (int j = 0; j < output_amount; j++)
+                        {
+                            if (index + j < bin.Length)
+                            {
+                                outputBytes[j] = bin[index + j];
+                            }
+                        }
+
+                        // Преобразуем в ASCII строку
+                        string outputText = Encoding.ASCII.GetString(outputBytes);
+
+                        // Отправляем в форму вывода
+                        OutputForm outputForm = new OutputForm();
+                        outputForm.ShowDialog();
+                        outputForm.DisplayOutput(outputText);
+
+                        // Пропускаем обработанные запятые
+                        i += output_amount - 1;
+                        break;
+
+                    case ',':
+                        // Определяем количество символов для ввода
+                        int input_amount = 1;
+                        while (i + input_amount < array_code.Length &&
+                               array_code[i + input_amount] == ',')
                         {
                             input_amount++;
                         }
-                        //запуск inputForm
-                        inputForm nen = new inputForm();
-                        //string input = nen.labelToString();
-                        for (int m = 0; input_amount>m;m++)
-                        {
 
+                        // Запуск формы ввода
+                        InputForm inputForm = new InputForm();
+                        inputForm.ShowDialog();
+                        string input = inputForm.GetInputText();
+
+                        // Записываем данные в память
+                        byte[] inputBytes = Encoding.ASCII.GetBytes(input);
+                        for (int j = 0; j < input_amount && j < inputBytes.Length; j++)
+                        {
+                            if (index + j < bin.Length)
+                            {
+                                bin[index + j] = inputBytes[j];
+                            }
                         }
+
+                        // Пропускаем обработанные запятые
+                        i += input_amount - 1;
                         break;
-                    case '[':
-                        if (bin[index] == 0)
+
+                    case '[': // начало цикла
+                        if (bin[index] != 0)
                         {
                             int depth = 1;
                             while (depth > 0)
                             {
                                 i++;
+                                if (i >= array_code.Length) break;
                                 if (array_code[i] == '[') depth++;
                                 if (array_code[i] == ']') depth--;
                             }
                         }
                         break;
 
-                    case ']':
+                    case ']': // конец цикла
                         if (bin[index] != 0)
                         {
                             int depth = 1;
                             while (depth > 0)
                             {
                                 i--;
+                                if (i < 0) break;
                                 if (array_code[i] == ']') depth++;
                                 if (array_code[i] == '[') depth--;
                             }
                         }
                         break;
-
                 }
             }
-            return bin;
-        } 
+        }
     }
 }
