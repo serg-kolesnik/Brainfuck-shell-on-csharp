@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Brainfuck_interpretator
 {
-    internal class binary
+    internal class binary_debug
     {
         public string Execute(string code, string input = "", int maxIterations = 1000000)
         {
@@ -22,12 +19,6 @@ namespace Brainfuck_interpretator
 
             for (int i = 0; i < array_code.Length; i++)
             {
-                iterationCount++;
-                if (iterationCount > maxIterations)
-                {
-                    throw new Exception($"Превышен лимит итераций ({maxIterations}). Возможен бесконечный цикл.");
-                }
-
                 switch (array_code[i])
                 {
                     case '+':
@@ -59,17 +50,13 @@ namespace Brainfuck_interpretator
                         break;
 
                     case '[':
+                        iterationCount = bin[index];
                         if (bin[index] == 0)
                         {
                             int depth = 1;
                             while (depth > 0)
                             {
                                 i++;
-                                iterationCount++;
-                                if (iterationCount > maxIterations)
-                                {
-                                    throw new Exception($"Превышен лимит итераций ({maxIterations}). Возможен бесконечный цикл.");
-                                }
                                 if (i >= array_code.Length) break;
                                 if (array_code[i] == '[') depth++;
                                 if (array_code[i] == ']') depth--;

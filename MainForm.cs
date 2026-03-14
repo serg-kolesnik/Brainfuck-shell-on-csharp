@@ -19,8 +19,11 @@ namespace Brainfuck_interpretator
 
         private void Run_Click(object sender, EventArgs e)
         {
-            binary main = new binary();
-            main.Execute(richTextBox1.Text);
+            OutputForm output = new OutputForm();
+            binary_debug main = new binary_debug();
+            string deb1 = main.Execute(richTextBox1.Text);
+            deblabel.Text = deb1;
+            output.label(deb1);
 
         }
 

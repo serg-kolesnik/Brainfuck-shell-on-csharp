@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="binary.cs" />
+    <Compile Include="binary_debug.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -54,27 +54,9 @@ namespace Brainfuck_interpretator
             this.Controls.Add(closeButton);
         }
 
-        public void DisplayOutput(string text)
+        public void output(string text)
         {
-            if (outputTextBox.InvokeRequired)
-            {
-                outputTextBox.Invoke(new Action<string>(DisplayOutput), text);
-            }
-            else
-            {
-                // Очищаем и выводим новый текст
-                outputTextBox.Clear();
-                outputTextBox.AppendText("Результат выполнения:\r\n\r\n");
-
-                // Показываем символы и их ASCII коды
-                for (int i = 0; i < text.Length; i++)
-                {
-                    char c = text[i];
-                    outputTextBox.AppendText($"Символ {i + 1}: '{c}' (ASCII: {(int)c})\r\n");
-                }
-
-                outputTextBox.AppendText($"\r\nСтрока целиком: {text}");
-            }
+            outputTextBox.Text = text;
         }
     }
 }
