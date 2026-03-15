@@ -1,0 +1,94 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\dmitr_4qa2plf\\source\\repos\\brainfuckall\\BrainTest\\BrainTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\dmitr_4qa2plf\\source\\repos\\brainfuckall\\Brainfuck-shell-on-csharp\\Brainfuck_interpretator.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\dmitr_4qa2plf\\source\\repos\\brainfuckall\\Brainfuck-shell-on-csharp\\Brainfuck_interpretator.csproj",
+        "projectName": "Brainfuck_interpretator",
+        "projectPath": "C:\\Users\\dmitr_4qa2plf\\source\\repos\\brainfuckall\\Brainfuck-shell-on-csharp\\Brainfuck_interpretator.csproj",
+        "UsingMicrosoftNETSdk": false,
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\dmitr_4qa2plf\\source\\repos\\brainfuckall\\BrainTest\\BrainTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\dmitr_4qa2plf\\source\\repos\\brainfuckall\\BrainTest\\BrainTest.csproj",
+        "projectName": "BrainTest",
+        "projectPath": "C:\\Users\\dmitr_4qa2plf\\source\\repos\\brainfuckall\\BrainTest\\BrainTest.csproj",
+        "packagesPath": "C:\\Users\\dmitr_4qa2plf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dmitr_4qa2plf\\source\\repos\\brainfuckall\\BrainTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\dmitr_4qa2plf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {
+              "C:\\Users\\dmitr_4qa2plf\\source\\repos\\brainfuckall\\Brainfuck-shell-on-csharp\\Brainfuck_interpretator.csproj": {
+                "projectPath": "C:\\Users\\dmitr_4qa2plf\\source\\repos\\brainfuckall\\Brainfuck-shell-on-csharp\\Brainfuck_interpretator.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.200"
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[4.0.2, )",
+              "versionOverride": "[4.0.2, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[4.0.2, )",
+              "versionOverride": "[4.0.2, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[18.0.1, )",
+              "versionOverride": "[18.0.1, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
