@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BrainTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56ac5dba063e9107191692a28d7c01ca661a8d67")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eaaa01e9247303cc5a748ee50aff6e5bea85f8ee")]
 [assembly: System.Reflection.AssemblyProductAttribute("BrainTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BrainTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

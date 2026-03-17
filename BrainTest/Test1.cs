@@ -6,7 +6,7 @@
         [TestMethod]
         public void Check2()
         {
-            binary test = new binary();
+            Binary test = new Binary();
             var currentResult = test.Execute("++++++++++++++++++++++++++++++++++++++++++++++++++.");
             var expectedResut = "2";
             Assert.AreEqual(expectedResut, currentResult);
@@ -15,7 +15,7 @@
         [TestMethod]
         public void simpleCycle()
         {
-            binary test = new binary();
+            Binary test = new Binary();
             var currentResult = test.Execute("+++++ [ > ++++++++ < - ]  В ячейке #1 теперь 40" +
                 "\r\n> ++++++++               Добавили еще 8, в ячейке #1 теперь 48 ('0')" +
                 "\r\n< +++++                   В ячейке #0 теперь 5 (счетчик)" +
@@ -26,7 +26,7 @@
         [TestMethod]
         public void doubleCycle()
         {
-            binary test = new binary();
+            Binary test = new Binary();
             var currentResult = test.Execute("++[>++[>+<-]<-]>>++++++[<++++++++>-]<.");
             var expectedResut = "2";
             Assert.AreEqual(expectedResut, currentResult);
@@ -35,7 +35,7 @@
         [TestMethod]
         public void Cycle()
         {
-            binary test = new binary();
+            Binary test = new Binary();
             var currentResult = test.Execute("++++++ [ > ++++++++ < - ] > ++ .");
             var expectedResut = "2";
             Assert.AreEqual(expectedResut, currentResult);
@@ -43,7 +43,7 @@
         [TestMethod]
         public void neverEndCycle()
         {
-            binary test = new binary();
+            Binary test = new Binary();
             var expectedResut = "Обнаружен бесконечный цикл на позиции 7.";
             try
             {
@@ -58,7 +58,7 @@
         public void NestedCycles_ShouldWork()
         {
             // Вложенные циклы: 3 * (3 * 5) = 45 (символ '-')
-            binary test = new binary();
+            Binary test = new Binary();
             var result = test.Execute("+++[>+++[>+++++<-]<-]>>.");
             Assert.AreEqual("-", result);
         }
@@ -68,7 +68,7 @@
         {
             // Проверка переполнения byte: 0 - 1 = 255. 
             // В ASCII 255 — это специальный символ, проверим через длину или код
-            binary test = new binary();
+            Binary test = new Binary();
             var result = test.Execute("-.");
             Assert.AreEqual((char)255, result[0]);
         }
@@ -78,7 +78,7 @@
         {
             // Записываем 1 в первую ячейку, 2 во вторую, выводим вторую потом первую
             // Ожидаем ASCII коды 2 и 1 (не печатные, но для теста сойдут)
-            binary test = new binary();
+            Binary test = new Binary();
             var result = test.Execute("+ > ++ . < .");
             Assert.AreEqual($"{(char)2,1}{(char)1,1}", result);
         }
@@ -87,7 +87,7 @@
         public void ClearLoop_ShouldSetZero()
         {
             // Популярная конструкция [-] которая обнуляет ячейку
-            binary test = new binary();
+            Binary test = new Binary();
             // Устанавливаем 50 ('2'), потом обнуляем, прибавляем 49 ('1')
             var result = test.Execute("++++++++++++++++++++++++++++++++++++++++++++++++++ [-] ++++++++++++++++++++++++++++++++++++++++++++++++++.");
             // Ошибка в расчете выше, 49 это '1'. Исправим:
@@ -99,7 +99,7 @@
         public void ComplexInfiniteCycle_ShouldBeDetected()
         {
             // Цикл, который меняет соседнюю ячейку, но забывает менять счетчик (позиция 0)
-            binary test = new binary();
+            Binary test = new Binary();
             var expectedMessage = "Обнаружен бесконечный цикл на позиции 1.";
             try
             {
@@ -115,7 +115,7 @@
         [TestMethod]
         public void EmptyCode_ShouldReturnEmptyString()
         {
-            binary test = new binary();
+            Binary test = new Binary();
             var result = test.Execute("");
             Assert.AreEqual("", result);
         }

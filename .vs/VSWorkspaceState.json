@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Brainfuck-shell-on-csharp"
   ],
+  "SelectedNode": "\\Brainfuck-shell-on-csharp\\Brainfuck_interpretator.csproj",
   "PreviewInSolutionExplorer": false
 }

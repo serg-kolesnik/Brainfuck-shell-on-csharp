@@ -144,3 +144,4 @@ C:\Users\dmitr_4qa2plf\source\repos\brainfuckall\BrainTest\bin\Debug\net472\Brai
 C:\Users\dmitr_4qa2plf\source\repos\brainfuckall\BrainTest\obj\Debug\net472\BrainTest.csproj.Up2Date
 C:\Users\dmitr_4qa2plf\source\repos\brainfuckall\BrainTest\obj\Debug\net472\BrainTest.dll
 C:\Users\dmitr_4qa2plf\source\repos\brainfuckall\BrainTest\obj\Debug\net472\BrainTest.pdb
+C:\Users\dmitr_4qa2plf\source\repos\brainfuckall\BrainTest\obj\Debug\net472\BrainTest.sourcelink.json
